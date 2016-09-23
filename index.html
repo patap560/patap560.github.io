@@ -88,12 +88,17 @@ testingData= read.csv("myDirectory/pml-testing.csv")  # read csv file </code></p
 
 <p>Get dimension of trainingData and testingData sets</p>
 <pre class="programlisting"><code>dim(trainingData) 
-dim(testingData
+dim(testingData)
 </code></pre>
 <pre ><code>  ## [1] 19622   153
   ## [1]  20 160  </code></pre>
   
-<p>Get columns names and their indexes from TrainingData in order to feed a new training set and a new testing set with only relevant variables related to accelerometer for Belt , forearm , arm and dumbell</p>
+<p>Get columns names and their indexes from TrainingData in order to feed a new training set 
+and a new testing set with only relevant variables related to accelerometer for Belt , forearm , arm and dumbell.
+In case of working only with training set and test set ( no validation set) then the usual practice in Machine learning is to split the data set into 
+75% for the training set and 25% for the testing set which is obviously no the case here as testing data ratio is only 20 / (19622+20).
+So we will subset the training data set into 75% for the training set and 25% for the testing set.
+</p>
 <pre class="programlisting"><code>names(trainingData) </code></pre>
 <pre><code> [1] "X"                        "user_name"               
   [3] "raw_timestamp_part_1"     "raw_timestamp_part_2"    
@@ -177,9 +182,10 @@ dim(testingData
 [159] "magnet_forearm_z"         "classe"   
 </code></pre>
 
-<p>I can now create a new training set and the testing set containing only the needed variables and the outcome 'classe' </p>
-<pre class="programlisting"><code>training=trainingData[,c(40,41,42,154,155,156,63,64,65,116,117,118,160)]
-testing=testingData[,c(40,41,42,154,155,156,63,64,65,116,117,118,160)]</code></pre>
+<p>I can now create a new data set containing only the needed variables and the outcome 'classe'from the whole trainingData set 
+and then split it for 75% into training set and 25% into testing set 
+ </p>
+<pre class="programlisting"><code>data <- trainingData[,c(40,41,42,154,155,156,63,64,65,116,117,118,160)]</code></pre>
 
 <p>Let us check the training set columns on the 10 first samples</p>
 <pre class="programlisting"><code>training[1:10,]</code></pre>
