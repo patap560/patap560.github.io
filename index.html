@@ -77,11 +77,11 @@ The data - Cleaning and Analysing data</h3>
 <a href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv">Testing data: pml-testing.csv.</a>
 
 <p>using read function :</p>
-<p>training= read.csv("myDirectory/pml-training.csv")  # read csv file </p>
-<p>testing= read.csv("H:/Coursera/Machine Learning J Hopkins/Project/pml-testing.csv")  # read csv file </p>
-
-<pre class="r"><code>  data = pml_training_data[, c(sensorColumns,160)]
-  dim(data)</code></pre>
+<pre ><code>
+training= read.csv("myDirectory/pml-training.csv")  # read csv file 
+testing= read.csv("H:/Coursera/Machine Learning J Hopkins/Project/pml-testing.csv")  # read csv file 
+data = pml_training_data[, c(sensorColumns,160)]
+dim(data)</code></pre>
 <pre><code>## [1] 19622   153</code></pre>
 
 <h5>Understanding the data structure :</h5>
