@@ -181,11 +181,36 @@ dim(testingData
 <pre class="programlisting"><code>training=trainingData[,c(40,41,42,154,155,156,63,64,65,116,117,118,160)]
 testing=testingData[,c(40,41,42,154,155,156,63,64,65,116,117,118,160)]</code></pre>
 
-<p>Let us check the training set on the 10 first samples</p>
-<pre class="programlisting"><code>training=trainingData[,c(40,41,42,154,155,156,63,64,65,116,117,118,160)]
-testing=testingData[,c(40,41,42,154,155,156,63,64,65,116,117,118,160)]
-training[1:10,]
-testing[1:10,]</code></pre>
+<p>Let us check the training set columns on the 10 first samples</p>
+<pre class="programlisting"><code>training[1:10,]</code></pre>
+
+<pre><code>
+   accel_belt_x accel_belt_y accel_belt_z accel_forearm_x accel_forearm_y accel_forearm_z accel_arm_x accel_arm_y
+1           -21            4           22             192             203            -215        -288         109
+2           -22            4           22             192             203            -216        -290         110
+3           -20            5           23             196             204            -213        -289         110
+4           -22            3           21             189             206            -214        -289         111
+5           -21            2           24             189             206            -214        -289         111
+6           -21            4           21             193             203            -215        -289         111
+7           -22            3           21             195             205            -215        -289         111
+8           -22            4           21             193             205            -213        -289         111
+9           -20            2           24             193             204            -214        -288         109
+10          -21            4           22             190             205            -215        -288         110
+   accel_arm_z accel_dumbbell_x accel_dumbbell_y accel_dumbbell_z classe
+1         -123             -234               47             -271      A
+2         -125             -233               47             -269      A
+3         -126             -232               46             -270      A
+4         -123             -232               48             -269      A
+5         -123             -233               48             -270      A
+6         -122             -234               48             -269      A
+7         -125             -232               47             -270      A
+8         -124             -234               46             -272      A
+9         -122             -232               47             -269      A
+10        -124             -235               48             -270      A
+
+</code></pre>
+
+
 
 <h5>Understanding the data structure :</h5>
 <p>
