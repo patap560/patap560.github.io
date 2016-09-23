@@ -84,17 +84,22 @@ The data - Cleaning and Analysing data</h3>
 <pre class="programlisting"><code>
 training= read.csv("myDirectory/pml-training.csv")  # read csv file 
 testing= read.csv("myDirectory/pml-testing.csv")  # read csv file 
+</code></pre>
 
-dim(training)</code></pre>
-<pre class="r"><code>## [1] 19622   153</code></pre>
-<pre><code></code> dim(training)</code></pre>
-<pre><code>## [1]  20 160</code></pre>
+<p>Get dimension of training and testing sets</p>
+<pre class="programlisting"><code>
+Get the dimension of the training and testing sets :</p>
+dim(training) 
+dim(testing
+</code></pre>
+<pre ><code>
+  ## [1] 19622   153
+  ## [1]  20 160
+  </code></pre>
 
 <h5>Understanding the data structure :</h5>
 <p>
-Get the dimension of the sets :
-dim(training)
-dim(testing)
+
 
 , looking for anomalies and errors , cleaning datas .
 Then we can plot data and in case of gaussian distributions we can standardize the variables using means and standard deviations .
