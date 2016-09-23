@@ -72,7 +72,7 @@ The prediction model will be used to predict 20 different test cases.
 <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" 
 class="octicon octicon-link"></span></a>
 The data - Loading - Cleaning -Analysing</h3>
-<h5>First of all , we load the training set and testing set in R </h5>
+<h5>First of all , we load the training data and testing data in data frames using only relevant columns  </h5>
 <p>
 <ul>
 <li><a href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv">Training data: pml-training.csv.</a></li>
@@ -209,7 +209,9 @@ testing=testingData[,c(40,41,42,154,155,156,63,64,65,116,117,118,160)]</code></p
 10        -124             -235               48             -270      A
 
 </code></pre>
+<p>Now we have our training set and testing set with the necessary columns but there can be some anomalies in the datas such as non numeric values or missing values</p>
 
+<h5>Once the data are loaded quality must be checked data and data cleaned if necessary   </h5>
 
 
 <h5>Understanding the data structure :</h5>
