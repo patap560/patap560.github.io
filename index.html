@@ -81,15 +81,19 @@ The data - Cleaning and Analysing data</h3>
 </p>
 
 <p>using read function :</p>
-<pre class="programlisting"><code>training= read.csv("myDirectory/pml-training.csv")  # read csv file 
-testing= read.csv("myDirectory/pml-testing.csv")  # read csv file </code></pre>
+<pre class="programlisting"><code>trainingData= read.csv("myDirectory/pml-training.csv")  # read csv file 
+testingData= read.csv("myDirectory/pml-testing.csv")  # read csv file </code></pre>
 
-<p>Get dimension of training and testing sets</p>
-<pre class="programlisting"><code>dim(training) 
-dim(testing
+<p>Get dimension of trainingData and testingData sets</p>
+<pre class="programlisting"><code>dim(trainingData) 
+dim(testingData
 </code></pre>
 <pre ><code>  ## [1] 19622   153
   ## [1]  20 160  </code></pre>
+  
+<p>Get columns names and their indexes from TrainingData in order to feed a new training set and a new testing set with only relevant variables related to accelerometer for Bel , forearm , arm and dumbell</p>
+<pre class="programlisting"><code>names(trainingData) </code></pre>
+
 
 <h5>Understanding the data structure :</h5>
 <p>
