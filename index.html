@@ -61,7 +61,7 @@ then one of the most important steps wich is the data , then the features and fi
 The question - Goal </h3>
 
 <p> 
-The goal of the project is to build a prediction model to predict the outcome 'class' variable indicating the manner in which these participants did their exercises . 
+The goal of the project is to build a prediction model to predict the outcome 'classe' variable indicating the manner in which these participants did their exercises . 
 Any of the other variables can be used to predict with. 
 Report should be created describing how the model was built , 
 how cross validation was used, what the expected out of sample error is expected to be, and the reasons of the choices. 
@@ -80,7 +80,9 @@ The data - Cleaning and Analysing data</h3>
 </ul>
 </p>
 
-<p>using read function :</p>
+<p>using read function .The read.csv function assumes by default that  file has a header row, so row 1 should contains the name of each column.
+If that's not the case, just add header=FALSE to the command</p>
+<p>The read function creates the 'data frame' type objects trainingData and testingData </p>
 <pre class="programlisting"><code>trainingData= read.csv("myDirectory/pml-training.csv")  # read csv file 
 testingData= read.csv("myDirectory/pml-testing.csv")  # read csv file </code></pre>
 
@@ -174,6 +176,11 @@ dim(testingData
 [157] "magnet_forearm_x"         "magnet_forearm_y"        
 [159] "magnet_forearm_z"         "classe"   
 </code></pre>
+
+<p>I can now create a new training set and the testing set containing only the needed variables and the outcome 'classe' </p>
+<pre class="programlisting"><code>training=trainingData[,c(40,41,42,154,155,156,63,64,65,116,117,118,160)]
+testing=testingData[,c(40,41,42,154,155,156,63,64,65,116,117,118,160)]</code></pre>
+
 
 <h5>Understanding the data structure :</h5>
 <p>
