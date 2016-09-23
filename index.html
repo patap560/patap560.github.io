@@ -80,6 +80,10 @@ The data - Cleaning and Analysing data</h3>
 <p>training= read.csv("myDirectory/pml-training.csv")  # read csv file </p>
 <p>testing= read.csv("H:/Coursera/Machine Learning J Hopkins/Project/pml-testing.csv")  # read csv file </p>
 
+<pre class="r"><code>  data = pml_training_data[, c(sensorColumns,160)]
+  dim(data)</code></pre>
+<pre><code>## [1] 19622   153</code></pre>
+
 <h5>Understanding the data structure :</h5>
 <p>
 Get the dimension of the sets :
