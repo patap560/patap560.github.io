@@ -72,9 +72,21 @@ The prediction model will be used to predict 20 different test cases.
 <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" 
 class="octicon octicon-link"></span></a>
 The data - Cleaning and Analysing data</h3>
-
 <p>
-First step is loading data in R , understanding the data structure , looking for anomalies and errors , cleaning datas .
+First of all , we load the training set and testing set in R
+<a href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv">Training data: pml-training.csv.</a>
+<a href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv">Testing data: pml-testing.csv.</a>
+training= read.csv("myDirectory/pml-training.csv")  # read csv file 
+testing= read.csv("H:/Coursera/Machine Learning J Hopkins/Project/pml-testing.csv")  # read csv file 
+</p>
+
+<h4>Understanding the data structure :</h4>
+<p>
+Get the dimension of the sets :
+dim(training)
+dim(testing)
+
+, looking for anomalies and errors , cleaning datas .
 Then we can plot data and in case of gaussian distributions we can standardize the variables using means and standard deviations .
 
 then we can plot the variables to understand how they actually look and see if any correlation appear between themselves or with the outcome.
