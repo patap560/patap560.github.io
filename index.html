@@ -291,9 +291,37 @@ dim(testing)</code></pre>
 class="octicon octicon-link"></span></a>
 The Model </h3>
 
-<pre class="programlisting"><code>control <- trainControl(method="repeatedcv", number=10, repeats=3)
+<p>  
+Our data are used to predict five categories in classe outcome ( A, B, C, D, E) so we will need a supervised multi class classifier .
+
+Let us try with sifferent parameters
+number of folds : 5 
+repeats : 3 
+ntree : 100 trees 
+</p>
+<pre class="programlisting"><code>control <- trainControl(method="repeatedcv", number=5, repeats=3)
 metric <- "Accuracy"
-rf_default <- train(classe~., data=training, method="rf", metric=metric,  trControl=control,ntree=500)</code></pre>
+modelRF <- train(classe~., data=training, method="rf", metric=metric,  trControl=control,ntree=100)</code></pre>
+
+<pre><code> Random Forest 
+
+14718 samples
+   12 predictor
+    5 classes: 'A', 'B', 'C', 'D', 'E' 
+
+No pre-processing
+Resampling: Cross-Validated (5 fold, repeated 3 times) 
+Summary of sample sizes: 11774, 11774, 11774, 11776, 11774, 11776, ... 
+Resampling results across tuning parameters:
+
+  mtry  Accuracy   Kappa    
+   2    0.9384655  0.9221499
+   7    0.9323508  0.9144159
+  12    0.9172895  0.8953536
+
+Accuracy was used to select the optimal model using  the largest value.
+The final value used for the model was mtry = 2. </code></pre>
+
 
 <p>You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
