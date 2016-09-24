@@ -265,13 +265,19 @@ $classe
 [1] "factor"</code></pre>
 
 <h5>Splitting data into training and test set</h5>
-<p> Now that our data is clean we can split it into 75% for the training set and 25% for the test set</p>
+<p> We have no missing values and all variables are numeric except the outcome variable which is a factor ( alphabetic).
+Now that our data is clean we can split it into 75% for the training set and 25% for the test set.
+Then we will think about preprocessing the training set eventually. </p>
 <pre class="programlisting"><code>library(caret)
+set.seed(3333) 
 inTrain <- createDataPartition(y=data$classe, p=0.75, list=FALSE)
 training <- data[inTrain,]
 dim(training)</code></pre>
 
-
+<pre><code> [1] 14718    13</code></pre>
+<pre class="programlisting"><code>testing <- data[-inTrain,]
+dim(testing)</code></pre>
+<pre><code> 4904   13</code></pre>
 
 <p>Then we can plot data and in case of gaussian distributions we can standardize the variables using means and standard deviations .
 
