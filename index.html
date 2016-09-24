@@ -219,8 +219,8 @@ So we will subset this data set into 75% for the training set and 25% for the te
 
 <h5>Once the data are loaded quality must be checked and data cleaned if necessary   </h5>
 <h5>Looking formmissing values (NA) : get the list of the rows </h5>
-<pre class="programlisting"><code> unique (unlist (lapply (x, function (x) which (is.na (x)))))</code></pre>
-
+<pre class="programlisting"><code> unique (unlist (lapply (data, function (x) which (is.na (x)))))</code></pre>
+<pre><code> integer(0)</code></pre>
 
 <h5>Understanding the data structure :</h5>
 <p>
