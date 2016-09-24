@@ -218,6 +218,8 @@ So we will subset this data set into 75% for the training set and 25% for the te
 <p>Now we have our data set with the necessary columns but there can be some anomalies in the datas such as non numeric values or missing values</p>
 
 <h5>Once the data are loaded quality must be checked and data cleaned if necessary   </h5>
+<h5>Looking formmissing values (NA) : get the list of the rows </h5>
+<pre class="programlisting"><code> unique (unlist (lapply (x, function (x) which (is.na (x)))))</code></pre>
 
 
 <h5>Understanding the data structure :</h5>
