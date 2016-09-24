@@ -280,10 +280,12 @@ dim(testing)</code></pre>
 <pre><code>[1] 4904   13</code></pre>
 
 <h5> Plotting predictors</h5>
-<p>Then we can plot the variables to understand how they actually look and see if any correlation appear between themselves or with the outcome.
-
+<p>Then we can plot the variables to understand how they actually look and see if any correlation appear between them or with the outcome.
   </p>
-
+  <pre class="programlisting"><code>featurePlot(x=training[,c("accel_arm_x","accel_belt_x","accel_dumbbell_x","accel_forearm_x")], 
+                 y=training$classe,
+                 plot="pairs")</code></pre>
+<p> Feature plot does not show any particular linear trend between variables and the outcome 'classe'</p>
 
 
 <h3>
