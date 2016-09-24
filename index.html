@@ -221,8 +221,48 @@ So we will subset this data set into 75% for the training set and 25% for the te
 <h5>Looking formmissing values (NA) : get the list of the rows </h5>
 <pre class="programlisting"><code> unique (unlist (lapply (data, function (x) which (is.na (x)))))</code></pre>
 <pre><code> integer(0)</code></pre>
+<p> We have no missing value but we could have some alphabetic values in variable </p>
 
-<h5>Understanding the data structure :</h5>
+<h5>Looking for class of the data variables </h5>
+<pre class="programlisting"><code>lapply(data, class)</code> </pre>
+<pre><code>$accel_belt_x
+[1] "integer"
+
+$accel_belt_y
+[1] "integer"
+
+$accel_belt_z
+[1] "integer"
+
+$accel_forearm_x
+[1] "integer"
+
+$accel_forearm_y
+[1] "integer"
+
+$accel_forearm_z
+[1] "integer"
+
+$accel_arm_x
+[1] "integer"
+
+$accel_arm_y
+[1] "integer"
+
+$accel_arm_z
+[1] "integer"
+
+$accel_dumbbell_x
+[1] "integer"
+
+$accel_dumbbell_y
+[1] "integer"
+
+$accel_dumbbell_z
+[1] "integer"
+
+$classe
+[1] "factor"</code></pre>
 <p>
 
 
