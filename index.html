@@ -299,13 +299,13 @@ This is why a Random Forest should perform well if mtry is correctly fitted.
 
 
 Let us try with sifferent parameters
-number of folds : 5 
+number of folds : 10 
 repeats : 3 
-ntree : 100 trees 
+ntree : 500 trees 
 </p>
-<pre class="programlisting"><code>control <- trainControl(method="repeatedcv", number=5, repeats=3)
+<pre class="programlisting"><code>control <- trainControl(method="repeatedcv", number=10, repeats=3)
 metric <- "Accuracy"
-modelRF <- train(classe~., data=training, method="rf", metric=metric,  trControl=control,ntree=100)</code></pre>
+modelRF <- train(classe~., data=training, method="rf", metric=metric,  trControl=control,ntree=500)</code></pre>
 
 <pre><code> Random Forest 
 
@@ -314,25 +314,24 @@ modelRF <- train(classe~., data=training, method="rf", metric=metric,  trControl
     5 classes: 'A', 'B', 'C', 'D', 'E' 
 
 No pre-processing
-Resampling: Cross-Validated (5 fold, repeated 3 times) 
-Summary of sample sizes: 11774, 11774, 11774, 11776, 11774, 11776, ... 
+Resampling: Cross-Validated (10 fold, repeated 3 times) 
+Summary of sample sizes: 13248, 13244, 13248, 13247, 13245, 13246, ... 
 Resampling results across tuning parameters:
 
   mtry  Accuracy   Kappa    
-   2    0.9384655  0.9221499
-   7    0.9323508  0.9144159
-  12    0.9172895  0.8953536
+   2    0.9468008  0.9327014
+   7    0.9393045  0.9232188
+  12    0.9230658  0.9026624
 
 Accuracy was used to select the optimal model using  the largest value.
-The final value used for the model was mtry = 2. </code></pre>
-<p>We can see our estimated accuracy is 93.84%.</p>
+The final value used for the model was mtry = 2.  </code></pre>
+<p>We can see that the best estimated accuracy which is 94.68%. is obtained for the mtry value of 2</p>
 
-<p> we can see that the best value for parameter mtry is 2
-Let us try again using this parameter mtry = 2 and with ntree = 1000 which should improve the accuracy.
+<p> So let us try again a new model using this parameter mtry = 2 and with ntree = 1000 which should improve the accuracy.
 </p>
 <pre class="programlisting"><code>control <- trainControl(method="repeatedcv", number=10, repeats=3)
 metric <- "Accuracy"
-randForest <- train(classe~., data=training, method="rf", metric=metric,  trControl=control,ntree=500)
+randForest <- train(classe~., data=training, method="rf", metric=metric,  trControl=control,ntree=1000)
 randForest</code></pre>
 
 
