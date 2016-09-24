@@ -293,6 +293,10 @@ The Model </h3>
 
 <p>  
 Our data are used to predict five categories in classe outcome ( A, B, C, D, E) so we will need a supervised multi class classifier .
+If we assume that any small bad deviation of acceleration ( by belt, arm, forearm , dumbbell) in any direction (x,y,z) leads to a bad result 
+then there should be for any of these movements ( accelerations) values in a decision tree that should fit the expected result.
+This is why a Random Forest should perform well if mtry is correctly fitted.
+
 
 Let us try with sifferent parameters
 number of folds : 5 
