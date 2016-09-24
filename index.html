@@ -325,9 +325,16 @@ Resampling results across tuning parameters:
 
 Accuracy was used to select the optimal model using  the largest value.
 The final value used for the model was mtry = 2. </code></pre>
+<p>We can see our estimated accuracy is 93.84%.</p>
 
+<p> we can see that the best value for parameter mtry is 2
+Let us try again using this parameter mtry = 2 and with ntree = 1000 which should improve the accuracy.
+</p>
+<pre class="programlisting"><code>control <- trainControl(method="repeatedcv", number=10, repeats=3)
+metric <- "Accuracy"
+randForest <- train(classe~., data=training, method="rf", metric=metric,  trControl=control,ntree=500)
+randForest</code></pre>
 
-<p>You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" 
