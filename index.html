@@ -285,7 +285,32 @@ dim(testing)</code></pre>
   <pre class="programlisting"><code>featurePlot(x=training[,c("accel_arm_x","accel_belt_x","accel_dumbbell_x","accel_forearm_x")], 
                  y=training$classe,
                  plot="pairs")</code></pre>
-<p> Feature plot does not show any particular linear trend between variables and the outcome 'classe'</p>
+<p> Feature plot does not show any particular linear trend between variables and the outcome 'classe'.
+Moreover it turns out that the variables in histograms show that they are not following gaussian distribution ( highly skewed  , multivariates ...)
+Linear Discriminant Analysis needs gaussian distributions like variables and therefore cannot give good results .
+Let us try lda with  preprocessing :</p>
+
+<pre class="programlisting"><code>modelLDAP <- train (classe ~. , data=training
+                       ,preProcess=c("center","scale")
+                       ,method="lda")
+modelLDAP </code> </pre>
+
+<pre> <code>Linear Discriminant Analysis 
+
+14718 samples
+   12 predictor
+    5 classes: 'A', 'B', 'C', 'D', 'E' 
+
+Pre-processing: centered (12), scaled (12) 
+Resampling: Bootstrapped (25 reps) 
+Summary of sample sizes: 14718, 14718, 14718, 14718, 14718, 14718, ... 
+Resampling results:
+
+  Accuracy   Kappa    
+  0.5061511  0.3679783</code></pre>
+  
+<p> As expected the accuracy is not good.
+This can suggest that a non linear classifier would better fit the outcome .</p>
 
 
 <h3>
