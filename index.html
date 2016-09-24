@@ -215,7 +215,7 @@ So we will subset this data set into 75% for the training set and 25% for the te
 10        -124             -235               48             -270      A
 
 </code></pre>
-<p>Now we have our data set with the necessary columns but there can be some anomalies in the datas such as non numeric values or missing values</p>
+<p>Now we have our data set with the necessary columns but there might be some anomalies in the datas such as non numeric values or missing values</p>
 
 <h5>Once the data are loaded quality must be checked and data cleaned if necessary   </h5>
 <h5>Looking formmissing values (NA) : get the list of the rows </h5>
@@ -263,11 +263,17 @@ $accel_dumbbell_z
 
 $classe
 [1] "factor"</code></pre>
-<p>
+
+<h5>Splitting data into training and test set</h5>
+<p> Now that our data is clean we can split it into 75% for the training set and 25% for the test set</p>
+<pre class="programlisting"><code>library(caret)
+inTrain <- createDataPartition(y=data$classe, p=0.75, list=FALSE)
+training <- data[inTrain,]
+dim(training)</code></pre>
 
 
-, looking for anomalies and errors , cleaning datas .
-Then we can plot data and in case of gaussian distributions we can standardize the variables using means and standard deviations .
+
+<p>Then we can plot data and in case of gaussian distributions we can standardize the variables using means and standard deviations .
 
 then we can plot the variables to understand how they actually look and see if any correlation appear between themselves or with the outcome.
 
