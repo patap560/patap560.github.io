@@ -354,20 +354,14 @@ Accuracy was used to select the optimal model using  the largest value.
 The final value used for the model was mtry = 2.  </code></pre>
 <p>We can see that the best estimated accuracy which is 94.68%. is obtained for the mtry value of 2.
 </p>
-<pre class="programlisting"><code>control <- trainControl(method="repeatedcv", number=10, repeats=3)
-metric <- "Accuracy"
-mtry <- 2
-tunegrid <- expand.grid(.mtry=mtry)
-randForest <- train(classe~., data=training, method="rf", metric=metric,tuneGrid=tunegrid,  trControl=control, ntree=1000)
-randForest</code></pre>
-
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" 
 class="octicon octicon-link"></span></a>
 Testing the model on the test set </h3>
+<pre class="programlisting"><code>randForestTesting = predict(randForest, newdata = testing)
+confusionMatrix(randForestTesting, testing$classe)</code></pre>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
       </section>
     </div>
 
