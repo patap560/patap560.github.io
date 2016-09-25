@@ -358,10 +358,42 @@ The final value used for the model was mtry = 2.  </code></pre>
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" 
 class="octicon octicon-link"></span></a>
-Testing the model on the test set </h3>
+Testing the model on the testing set </h3>
 <pre class="programlisting"><code>randForestTesting = predict(randForest, newdata = testing)
 confusionMatrix(randForestTesting, testing$classe)</code></pre>
+<pre><code>Confusion Matrix and Statistics
 
+          Reference
+Prediction    A    B    C    D    E
+         A 1346   38   19   14    1
+         B   12  867   30    2   10
+         C   14   35  800   27    4
+         D   21    4    5  757    4
+         E    2    5    1    4  882
+
+Overall Statistics
+                                          
+               Accuracy : 0.9486          
+                 95% CI : (0.9421, 0.9546)
+    No Information Rate : 0.2845          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.935           
+ Mcnemar's Test P-Value : 9.652e-05       
+
+Statistics by Class:
+
+                     Class: A Class: B Class: C Class: D Class: E
+Sensitivity            0.9649   0.9136   0.9357   0.9415   0.9789
+Specificity            0.9795   0.9863   0.9802   0.9917   0.9970
+Pos Pred Value         0.9492   0.9414   0.9091   0.9570   0.9866
+Neg Pred Value         0.9859   0.9794   0.9863   0.9886   0.9953
+Prevalence             0.2845   0.1935   0.1743   0.1639   0.1837
+Detection Rate         0.2745   0.1768   0.1631   0.1544   0.1799
+Detection Prevalence   0.2892   0.1878   0.1794   0.1613   0.1823
+Balanced Accuracy      0.9722   0.9500   0.9580   0.9666   0.9880
+      </code> </pre>
+      
       </section>
     </div>
 
